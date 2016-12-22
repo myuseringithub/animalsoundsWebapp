@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  nodejs:
+    build:
+      context: ./
+      dockerfile: Dockerfile    
+    command: nodemon --debug=5858
+    ports:
+      - "80:80"
