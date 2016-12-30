@@ -1,0 +1,11 @@
+version: "2"
+
+# USAGE (cd to project root): docker-compose -f ./setup/<docker-compose>.yml up 
+services:
+  nodejs:
+    build:
+      context: ../
+      dockerfile: ./setup/server.dockerfile    
+    command: nodemon --debug=5858
+    ports:
+      - "80:80"
