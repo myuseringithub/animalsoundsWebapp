@@ -1,0 +1,22 @@
+version: '3'
+
+networks: 
+  default:
+    external: false
+  proxy_default:
+    external: true
+
+services:
+
+  nodejs:
+    image: myuserindocker/animalsounds-webapp:latest
+    environment:
+      DEPLOYMENT: production
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+    networks:
+      - default
+      - proxy_default

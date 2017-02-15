@@ -1,11 +1,12 @@
-version: "2"
+version: "2.1"
 
 # USAGE (cd to project root): docker-compose -f ./setup/<docker-compose>.yml up 
 services:
   nodejs:
     build:
-      context: ../
-      dockerfile: ./setup/server.dockerfile    
+      context: ../../
+      dockerfile: ./setup/container/server.dockerfile    
+    image: myuserindocker/animalsounds-webapp:latest
     command: nodemon --debug=5858
     ports:
       - "80:80"
