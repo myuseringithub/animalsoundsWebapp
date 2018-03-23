@@ -7,6 +7,6 @@ services:
       context: ../../
       dockerfile: ./setup/container/server.dockerfile    
     image: myuserindocker/animalsounds-webapp:latest
-    command: nodemon --debug=5858
+    command: node /app/source/serverSide/nodeServer/server.js
     ports:
       - "80:80"

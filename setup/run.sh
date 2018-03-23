@@ -9,3 +9,5 @@ deployment.buildImage() {
 production() {
     docker stack deploy -c ./setup/container/production.dockerStack.yml animalsoundswebapp
 }
+
+$@

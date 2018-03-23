@@ -3,16 +3,18 @@
 
 module.exports = function reverseProxy(proxy) {
 
-    let email = process.env.EMAIL
-    let domain = 'animalsounds.webapp.run'
+    let domain = 'webapp.run'
+    let subdomain = 'animalsounds'
+    let containerGroupName = 'animalsoundswebapp'
 
-    proxy.register(domain, 'http://animalsoundswebapp_nodejs:80', {
-        ssl: {
-            letsencrypt: {
-                email: email, // Domain owner/admin email
-                production: true, // WARNING: Only use this flag when the proxy is verified to work correctly to avoid being banned!
-            }
-        }
-    });
-        
+    let proxyConfig = [
+        {
+            domain: domain,
+            subdomain: subdomain,
+            containerRoute: `http://${containerGroupName}_nodejs:80`,
+            ssl: true            
+        },
+    ]
+
+    return proxyConfig
 }
