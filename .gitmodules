@@ -1,4 +1,0 @@
-[submodule "AppDeliveryConfigurations"]
-	path = AppDeliveryConfigurations
-	url = https://github.com/myuseringithub/AppDeliveryConfigurations.git
-	branch = master

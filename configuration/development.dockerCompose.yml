@@ -4,8 +4,8 @@ version: "2.1"
 services:
   nodejs:
     build:
-      context: ../../
-      dockerfile: ./setup/container/server.dockerfile    
+      context: ../
+      dockerfile: ./configuration/container/server.dockerfile    
     image: myuserindocker/animalsounds-webapp:latest
     command: node /app/source/serverSide/nodeServer/server.js
     ports:
