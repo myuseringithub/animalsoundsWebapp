@@ -9,3 +9,4 @@
 
     `./script/run.sh production`
 
+![Screencast](./documentation/screencast.gif)
